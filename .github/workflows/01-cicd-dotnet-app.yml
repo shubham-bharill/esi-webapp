@@ -1,5 +1,5 @@
 name: 01-CICD-Dotnet-App
-on: 
+on:
   push:
     branches: ["main"]
 jobs:
@@ -21,3 +21,19 @@ jobs:
         with:
           name: dotnet-app-build
           path: dotnet-app.zip
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download ZIP artifact
+        uses: actions/download-artifact@v7.0.0
+        with:
+          name: dotnet-app-build
+          path: ./artifact
+
+      - name: Deploy to Server
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: "esi-webapp"
+          package: "./artifact/dotnet-app.zip"
