@@ -1,0 +1,45 @@
+# Ignore build artifacts and intermediate files
+bin/
+obj/
+artifacts/
+publish/
+TestResults/
+*.dbmdl
+
+# Ignore user and IDE-specific files
+.vscode/
+.idea/
+*.suo
+*.user
+*.userprefs
+*.rsuser
+*.vs/
+*.swp
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.temp
+*.cache
+
+# Ignore environment and secret files
+.env
+secrets.json
+
+# Ignore NuGet packages and related files
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+
+# Ignore Rider-specific files
+.idea/
+*.sln.iml
+
+# Ignore Visual Studio Code workspace settings
+*.code-workspace
